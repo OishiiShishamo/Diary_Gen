@@ -13,21 +13,21 @@ def _write():
     month = input()
     print("day>", end="")
     day = input()
-    print("sleep>", end="")
+    print("sleep(hour)>", end="")
     sleep = input()
     print("condition>", end="")
     condition = input()
     print("one word>", end="")
     one_word = input()
-    df = pd.DataFrame([year, month, day, sleep, condition, one_word])
+    df = pd.DataFrame([[year, month, day, sleep, condition, one_word]])
     df.to_csv("./diary.csv", mode="a", header=False, encoding="utf-8")
-    diary_csv = pd.read_csv("./diary.csv")
     
 
 def _read():
     print(pd.read_csv("./diary.csv"))
 
 def main():
+    print("一言日記共の墓場")
     while(1):
         print("読む？書く？(default = 書く)>", end="")
         mode = input()
